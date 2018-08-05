@@ -26,7 +26,7 @@ mongoose.connect("mongodb://localhost/week18Populater");
 // A GET route for scraping the echoJS website
 app.get("/scrape", function(req, res) {
     // First, we grab the body of the html with request
-    axios.get("http://www.echojs.com/").then(function(response) {
+    axios.get("http://www.nytimes.com/").then(function(response) {
       // Then, we load that into cheerio and save it to $ for a shorthand selector
       var $ = cheerio.load(response.data);
   
@@ -91,11 +91,7 @@ app.get("/scrape", function(req, res) {
   
   // Route for saving/updating an Article's associated Note
   app.post("/articles/:id", function(req, res) {
-    // TODO
-    // ====
-    // save the new note that gets posted to the Notes collection
-    // then find an article from the req.params.id
-    // and update it's "note" property with the _id of the new note
+
   });
   
   // Start the server
